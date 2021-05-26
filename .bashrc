@@ -3,6 +3,7 @@
 # Git repo: https://github.com/karmicdude/dotfiles
 
 # If not running interactively, don't do anything
+[[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
 [[ $- != *i* ]] && return
 
 # Correct minor errors in the spelling of a directory component in a cd command
@@ -64,6 +65,7 @@ done
 [[ -f /usr/bin/neofetch ]] && neofetch | cat -s
 
 [[ -f /usr/bin/terraform ]] && complete -C /usr/bin/terraform terraform
+[[ -f /usr/bin/mcli ]] && complete -C /usr/bin/mcli mcli
 
 [[ -f /usr/share/goto/goto.sh ]] && . /usr/share/goto/goto.sh
 
